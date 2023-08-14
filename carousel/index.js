@@ -53,6 +53,9 @@ previousArrow.addEventListener('click', function () {
   index -= 1;
   showSlides(index);
 })
+
+
+// use Array.from(dotArray).map but diract map on dotArray will not work because it array like object
 for (let i = 0; i < dotArray.length; i++) {
   dotArray[i].addEventListener('click', event => {
     // event.target is the element that is clicked
