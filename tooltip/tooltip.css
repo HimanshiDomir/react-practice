@@ -1,0 +1,27 @@
+body {
+  margin-top: 100px;
+  text-align: center;
+}
+a {
+  font-size:25px;
+  color: #0bd;
+  text-decoration: none;
+}
+.tooltip {
+  display: inline;
+  position: relative;
+}
+.tooltip:hover:after{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: #444;
+  border-radius: 8px;
+  color: #fff;
+  content: attr(x);
+  margin: -82px auto 0;
+  font-size: 16px;
+  padding: 13px;
+  width: 220px;
+}
