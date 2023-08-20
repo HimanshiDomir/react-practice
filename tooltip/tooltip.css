@@ -11,6 +11,7 @@ a {
   display: inline;
   position: relative;
 }
+/* :: is not supported by IE8 but : is suported by all */
 .tooltip:hover:after{
   display: -webkit-flex;
   display: flex;

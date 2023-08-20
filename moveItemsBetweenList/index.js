@@ -1,3 +1,6 @@
+//appendChild wokrs with either node or element(id)
+
+
 document.getElementById('btnRight').addEventListener('click', function(){
   lstBox2.appendChild((document.getElementById('lstBox1').selectedOptions)[0]);
   // no need of this line if not using cloneNode
