@@ -53,14 +53,49 @@
                 });
             });
 
-            data.forEach((element, index) => {
-                accordionContainer.innerHTML += `<div class="accordion-data">
+            // ******************with template literals no for loop for doc methods**********************
+            const markupList = data.map((element, index) => {
+                let data = '';
+                return (`<div class="accordion-data">
                     <div class="accordion-header" id='#accordion-header${index}'>${element?.title}
-            </div>
-                <div class="accordion-body hide" id='accordion-header${index}'>
-                    ${element?.body}
-                     </div></div>`;
+                    </div>
+                    <div class="accordion-body hide" id='accordion-header${index}'>
+                        ${element?.body}
+                    </div>
+                </div>`)
             });
+
+            const rawHTML = joinHtml(markupList);
+            function joinHtml(items) {
+                let joinedHtml = "";
+                items.forEach(item => {
+                    console.log(item)
+                    joinedHtml += item;
+                });
+                return joinedHtml
+            }
+            // accordionContainer.innerHTML = rawHTML; or use below for better perfornmance
+            //    insertAdjacentHTML method parses the specified text as HTML or XML and inserts the resulting nodes into
+            //     the DOM tree at a specified position.
+            //     It does not reparse the element it is being used on, and 
+            //     thus it does not corrupt the existing elements inside that element. 
+            //     This avoids the extra step of serialization, 
+            //     making it much faster than direct innerHTMLmanipulation 
+            accordionContainer.insertAdjacentHTML("afterbegin", rawHTML);
+
+
+            // ******************with template literals**********************
+            // data.forEach((element, index) => {
+            //     accordionContainer.innerHTML += `<div class="accordion-data">
+            //         <div class="accordion-header" id='#accordion-header${index}'>${element?.title}
+            // </div>
+            //     <div class="accordion-body hide" id='accordion-header${index}'>
+            //         ${element?.body}
+            //          </div></div>`;
+            // });
+
+
+            // ******************without template literals**********************
             // data.forEach((element, index) => {
             //     // create accordion header
             //     let accordionData = document.createElement('div');
