@@ -1,0 +1,88 @@
+<html>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+    div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* direction: rtl; */
+        transition: all 4s ease-in-out;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    i {
+        color: gray;
+
+    }
+    label{
+        float: right;
+    }
+
+    label:hover,
+    label:hover~label,
+    input[type="radio"]:checked~label {
+
+        cursor: pointer;
+
+        & i {
+            color: green;
+        }
+    }
+
+    i[class*="half"] {
+        color: yellow;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="star-container">
+        <input type="radio" id="star-5" name="rating" />
+        <label for="star-5">
+            <i class="fa fa-2x fa-star"></i>
+        </label>
+        <input type="radio" id="star-4-half" name="rating" />
+        <label for="star-4-half">
+            <i class="fa fa-2x fa-star-half"></i>
+        </label>
+        <input type="radio" id="star-4" name="rating" />
+        <label for="star-4">
+            <i class="fa fa-2x fa-star"></i>
+        </label>
+        <input type="radio" id="star-3-half" name="rating" />
+        <label for="star-3-half">
+            <i class="fa fa-2x fa-star-half"></i>
+        </label>
+        <input type="radio" id="star-3" name="rating" />
+        <label for="star-3">
+            <i class="fa fa-2x fa-star"></i>
+        </label>
+        <input type="radio" id="star-2-half" name="rating" />
+        <label for="star-2-half">
+            <i class="fa fa-2x fa-star-half"></i>
+        </label>
+        <input type="radio" id="star-2" name="rating" />
+        <label for="star-2">
+            <i class="fa fa-2x fa-star"></i>
+        </label>
+        <input type="radio" id="star-1-half" name="rating" />
+        <label for="star-1-half">
+            <i class="fa fa-2x fa-star-half"></i>
+        </label>
+
+        <input type="radio" id="star-1" name="rating" />
+        <label for="star-1">
+            <i class="fa fa-2x fa-star"></i>
+        </label>
+        <input type="radio" id="star-half" name="rating" />
+        <label for="star-half">
+            <i class="fa fa-2x fa-star-half"></i>
+        </label>
+    </div>
+</body>
+
+</html>
