@@ -1,0 +1,40 @@
+<style>
+    #myprogressBar {
+        height: 20px;
+        /* background-color: orange; */
+        background-image: repeating-linear-gradient(-45deg, #8b89ff 0px, #8b89ff 20px,
+        #6765ff 20px, #6765ff 40px);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transition: width 1s ease-in-out;
+    }
+
+    #Progress_Status {
+        width: 100%;
+        border: 1px solid green;
+        height: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div id="Progress_Status">
+        <div id="myprogressBar"></div>
+    </div>
+    <script>
+        let width = 10;
+        let percentage = document.querySelector('#myprogressBar');
+        percentage.style.width = width + '%';
+        function updateProgress() {
+            if (width < 100) {
+                 width = (width + 10) 
+                percentage.style.width = width + '%';
+            } else {
+                clearInterval(x);
+                percentage.style.width = 10 + '%';
+            }
+
+        }
+        let x = setInterval(updateProgress, 2000);
+    </script>
+</body>
