@@ -1,0 +1,53 @@
+<head>
+    <style>
+        #days,
+        #weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 60px);
+            grid-template-rows: 1fr;
+            justify-content: center;
+            align-items: center;
+            gap: 10px 20px;
+        }
+
+        #weekdays li {
+            padding: 16px;
+            text-align: center;
+            background-color: brown;
+            list-style-type: none;
+            display: inline;
+            border-radius: 30%;
+        }
+
+        #days li {
+            padding: 16px;
+            text-align: center;
+            list-style-type: none;
+            display: inline;
+            border: 2px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: violet;
+
+            &.blank {
+                background-color: lightgrey;
+                cursor: default;
+            }
+        }
+
+        .calenderContainer {
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calenderContainer">
+        <ul id="weekdays">
+        </ul>
+
+        <ul id="days"></ul>
+
+    </div>
+    <script src="./calendar.js"></script>
+</body>
